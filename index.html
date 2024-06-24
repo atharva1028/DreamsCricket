@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamsCricket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        .top {
+            background-image: url("images/background-2.jpg");
+            min-height: 500px;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .navbar {
+            background-color: rgb(152, 159, 165);
+        }
+
+       
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .nav-item a {
+            color: black;
+            font-family: fantasy;
+            font-size: larger;
+        }
+
+        .nav-item a:hover {
+            color: rgba(255, 255, 255, 0.826);
+        }
+
+        .navbar-brand a {
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        /* .section-1{
+                background-image: url("images/gif-1.gif");
+               min-height: 500px;
+               background-repeat: no-repeat;
+               background-size: cover;
+               opacity: 0.2;
+            } */
+        .dn-diamond {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+
+            overflow: hidden;
+        }
+
+        .card-main-container:hover .dn-diamond {
+            animation: spin 3s infinite linear;
+        }
+
+
+        @keyframes spin {
+            from {
+                transform: rotateY(360deg) rotate(0deg);
+            }
+
+            to {
+                transform: rotateY(0deg) rotate(0deg);
+            }
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-hover-zoom {
+            height: 200px;
+            overflow: hidden;
+        }
+
+
+        .img-hover-zoom img {
+            transition: transform .5s ease;
+        }
+
+
+        .img-hover-zoom:hover img {
+            transform: scale(1.5);
+        }
+
+        .img-hover-zoom1 {
+            height: 350px;
+            overflow: hidden;
+        }
+
+
+        .img-hover-zoom1 img {
+            transition: transform .5s ease;
+        }
+
+
+        .img-hover-zoom1:hover img {
+            transform: scale(1.5);
+        }
+
+
+        .card-learn {
+            border: none;
+        }
+
+        .a-learn {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: green;
+            text-decoration: none;
+        }
+
+        .a-learn:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .card-coach {
+            border: none;
+            max-height: 600px;
+        }
+
+        .card-coach:hover {
+            background-color: gray;
+            color: white;
+            box-shadow: 2px 8px 16px 5px;
+        }
+
+        .animated-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 16px 106px;
+            border: 4px solid;
+            border-color: transparent;
+            font-size: 16px;
+            background-color: ;
+            border-radius: 100px;
+            font-weight: 600;
+            color: #1f387e;
+            box-shadow: 0 0 0 2px #ffffff;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button svg {
+            position: absolute;
+            width: 24px;
+            fill: #1f387e;
+            z-index: 9;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .arr-1 {
+            right: 16px;
+        }
+
+        .animated-button .arr-2 {
+            left: -25%;
+        }
+
+        .animated-button .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: #c5e5e4;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button .text {
+            position: relative;
+            z-index: 1;
+            transform: translateX(-12px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .animated-button:hover {
+            box-shadow: 0 0 0 12px transparent;
+            color: #212121;
+            border-radius: 12px;
+        }
+
+        .animated-button:hover .arr-1 {
+            right: -25%;
+        }
+
+        .animated-button:hover .arr-2 {
+            left: 16px;
+        }
+
+        .animated-button:hover .text {
+            transform: translateX(12px);
+        }
+
+        .animated-button:hover svg {
+            fill: #1f387e;
+        }
+
+        .animated-button:active {
+            scale: 0.95;
+            box-shadow: 0 0 0 4px greenyellow;
+        }
+
+        .animated-button:hover .circle {
+            width: 220px;
+            height: 220px;
+            opacity: 1;
+        }
+
+        .request-container {
+            background-image: url('images/image.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 30px;
+        }
+
+        .card-request {
+            background: transparent;
+            border: none;
+        }
+
+        .card-map {
+            border: none;
+            background-color: #596167;
+            color: #fff;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .input-wrapper input {
+            padding-right: 40px;
+        }
+
+        .input-wrapper button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .modal-content {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .modal-body {
+            padding: 0;
+        }
+
+        .btn-close {
+            position: absolute;
+            right: 0;
+            padding: 1em;
+        }
+
+        h1 {
+            font-size: 2.3em;
+            font-weight: bold;
+        }
+
+        .myform {
+            padding: 2em;
+            max-width: 100%;
+            color: #fff;
+            box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+        }
+
+        @media (max-width: 576px) {
+            .myform {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        .input-log:focus {
+            box-shadow: inset 0 -1px 0 #7e7e7e;
+        }
+
+        .input-log {
+            background-color: inherit;
+            color: #fff;
+            padding-left: 0;
+            border: 0;
+            border-radius: 0;
+            border-bottom: 1px solid #fff;
+        }
+
+        .myform .btn {
+            width: 100%;
+            font-weight: 800;
+            background-color: #fff;
+            border-radius: 0;
+            padding: 0.5em 0;
+        }
+
+        .myform .btn:hover {
+            background-color: inherit;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .p1 {
+            text-align: center;
+            padding-top: 2em;
+            color: grey;
+        }
+
+        .p1 a {
+            color: #e1e1e1;
+            text-decoration: none;
+        }
+
+        .p1 a:hover {
+            color: #fff;
+        }
+
+        .swiper-button-next,
+        .swiper-rtl {
+            right: var(--swiper-navigation-sides-offset, 10px);
+            left: auto;
+            position: absolute;
+            padding-left: 22px;
+        }
+
+        .swiper-button-prev {
+
+            padding-right: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="">
+        <div class="col-lg-12 col-md-12 top">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+
+                    <img src="images/logo.png" alt="Logo" width="80px" height="50px"
+                        class="d-inline-block pe-2 align-text-top">
+                    <a style="font-family: fantasy; font-size:33px;" class="nav-link"> DreamsCricket </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto me-3 mb-2 gap-1 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/coach.html">Coaches</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/aboutus.html">Truf</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#work">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#faq">Faq</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#foot">Contacts Us</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex">
+                            <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                                data-bs-target="#ModalForm">
+                                Login/Ragister
+                            </button>
+                            <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <button type="button" class="btn-close btn-close-white"
+                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <div class="myform bg-dark">
+                                                <h1 class="text-center">Login Form</h1>
+                                                <form>
+                                                    <div class="mb-3 mt-4">
+                                                        <label for="exampleInputEmail1" class="form-label">Email
+                                                            address</label>
+                                                        <input type="email" class="form-control input-log"
+                                                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputPassword1"
+                                                            class="form-label">Password</label>
+                                                        <input type="password" class="form-control input-log"
+                                                            id="exampleInputPassword1">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-light mt-3">LOGIN</button>
+                                                    <p class="p1">Not a member? <a href="/joinus.html">Signup now</a>
+                                                    </p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="col-lg-12 col-xs-12 pt-5 justify-content-start text-start text-light"
+                style="padding-left: 50px;">
+                <h4 class="pb-4">World Class Cricket Turf and Coaching</h4>
+                <h1>Choose Your Trufs</h1>
+                <h1>And Start Playing</h1>
+                <h1 class="pb-4">Cricket.</h1>
+                <h5>Unleash Your Athletic Potential with Expert Coaching,</h5>
+                <h5>State-of-the-Art Facilities, and Personalized Training Programs.</h5>
+            </div>
+        </div>
+
+        <div class="" id="work">
+            <div class="d-flex justify-content-center pt-4">
+                <h3>How It Work</h3>
+            </div>
+
+            <!-- <div class="dn-diamond">
+
+                </div> -->
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-md-4 mb-4 ">
+                        <div class="card h-100 align-item-center justify-content-center">
+
+                            <div class="card-body text-center pt-5 card-main-container">
+                                <div class="dn-diamond mb-5">
+                                    <img src="images/join.png" style="width: 100%;" alt="">
+                                </div>
+                                <h5 class="card-title">Join us</h5>
+                                <p class="card-text"> Get started on our software platform
+                                    with a simple account creation process.</p>
+                                <a href="/joinus.html"><button class="btn w-100 btn-secondary">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+
+                            <div class="card-body text-center pt-5 card-main-container">
+                                <div class="dn-diamond mb-5">
+
+                                    <img src="images/man.png" style="width: 100%;" alt="">
+                                </div>
+                                <h5 class="card-title">Select Coaches/Venues</h5>
+                                <p class="card-text">Book Cricket coaches and venues for expert guidance and premium
+                                    facilities.</p>
+                                <button type="button" class="btn btn-secondary w-100" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Book Now
+                                </button>
+
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog ">
+                                        <div class="modal-content bg-dark">
+                                            <div class="">
+                                                <a href="/coach.html"><button type="button"
+                                                        class="btn btn-primary w-50" data-bs-dismiss="modal">Book
+                                                        Coaches</button></a>
+                                                <a href="/aboutus.html"><button type="button"
+                                                        class="btn btn-warning w-50" data-bs-dismiss="modal">Book
+                                                        Truf</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+
+                            <div class="card-body text-center pt-5 card-main-container">
+                                <div class="dn-diamond mb-5">
+                                    <img src="images/booking.png" style="width: 100%;" alt="">
+                                </div>
+                                <h5 class="card-title">Booking Process</h5>
+                                <p class="card-text">Easily book, pay, and enjoy a seamless experience on our
+                                    user-friendly platform.</p>
+                                <button class="btn w-100 btn-secondary">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container" >
+            <div class="d-flex justify-content-center pt-4">
+                <h3>Find Trufs Near You</h3>
+
+            </div>
+            <div class="swiper mySwiper mt-3">
+                <div class=" swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class=" card h-100">
+                            <div class="img-hover-zoom">
+                                <img id="image1" src="images/ground-1.png" alt="This zooms-in really well and smooth">
+                            </div>
+                            <div class="card-body text-start pt-5 card-main-container">
+                                <h3 class="card-title" id="text-1">Truf King</h3>
+                                <p class="card-text">Best place to play a cricket, Its a roof top Truf and also avalible
+                                    bat and ball </p>
+                                <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px ">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">Vijay Nagar</p>
+                                <br>
+                                <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">Next Availiblity: <span class="text-success">16 june
+                                        2024</span></p>
+                                <a href="/aboutus.html"> <button id="storeImage" onclick="storeImage('image1','text-1')"
+                                        class="btn w-100 btn-secondary">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <div class="img-hover-zoom">
+                                <img id="image2" src="images/ground-3.jpg" alt="This zooms-in really well and smooth">
+                            </div>
+                            <div class="card-body text-start pt-5 card-main-container">
+                                <h3 class="card-title" id="text-2">IsI Truf</h3>
+                                <p class="card-text">Best place to play a cricket, Its a roof top Truf and also avalible
+                                    bat and ball </p>
+                                <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px ">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">MahaLaxmi Nagar</p>
+                                <br>
+                                <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">Next Availiblity: <span class="text-success">1 june
+                                        2024</span></p>
+                                <button class="btn w-100 btn-secondary" onclick="storeImage('image2','text-2')">Book
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <div class="img-hover-zoom">
+                                <img src="images/ground-4.png" id="image-3" alt="This zooms-in really well and smooth">
+                            </div>
+                            <div class="card-body text-start pt-5 card-main-container">
+                                <h3 class="card-title" id="text-3">Royal Truf</h3>
+                                <p class="card-text">Best place to play a cricket, Its a roof top Truf and also avalible
+                                    bat and ball </p>
+                                <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px ">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">MahaLaxmi Nagar</p>
+                                <br>
+                                <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">Next Availiblity: <span class="text-success">1 june
+                                        2024</span></p>
+                                <button id="storeImage" onclick="storeImage('image-3','text-3')"
+                                    class="btn w-100 btn-secondary">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <div class="img-hover-zoom">
+                                <img src="images/ground-5.png" id="image-4" alt="This zooms-in really well and smooth">
+                            </div>
+                            <div class="card-body text-start pt-5 card-main-container">
+                                <h3 class="card-title" id="text-4">LIG Truf</h3>
+                                <p class="card-text">Best place to play a cricket, Its a roof top Truf and also avalible
+                                    bat and ball </p>
+                                <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px ">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">LIG</p>
+                                <br>
+                                <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">Next Availiblity: <span class="text-success">2 june
+                                        2024</span></p>
+                                <button id="storeImage" onclick="storeImage('image-4','text-4')"
+                                    class="btn w-100 btn-secondary">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <div class="img-hover-zoom">
+                                <img id="image-5" src="images/ground-6.png" alt="This zooms-in really well and smooth">
+                            </div>
+                            <div class="card-body text-start pt-5 card-main-container">
+                                <h3 class="card-title" id="text-5">Night Truf</h3>
+                                <p class="card-text">Best place to play a cricket, Its a roof top Truf and also avalible
+                                    bat and ball </p>
+                                <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px ">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">bhawarkuan</p>
+                                <br>
+                                <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">Next Availiblity: <span class="text-success">5 june
+                                        2024</span></p>
+                                <button id="storeImage" onclick="storeImage('image-5','text-5')"
+                                    class="btn w-100 btn-secondary">Book Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <div class="img-hover-zoom">
+                                <img id="image-6" src="images/ground-7.png" alt="This zooms-in really well and smooth">
+                            </div>
+                            <div class="card-body text-start pt-5 card-main-container">
+                                <h3 class="card-title" id="text-6">Dreams Truf</h3>
+                                <p class="card-text">Best place to play a cricket, Its a roof top Truf and also avalible
+                                    bat and ball </p>
+                                <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px ">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">Palasia</p>
+                                <br>
+                                <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover"
+                                    colors="black" style="width:20px;height:20px;padding-top:4px">
+                                </lord-icon>
+                                <p class="card-text d-inline-flex ">Next Availiblity: <span class="text-success">10 june
+                                        2024</span></p>
+                                <button id="storeImage" onclick="storeImage('image-6','text-6')"
+                                    class="btn w-100 btn-secondary">Book Now</button></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                   
+                </div>
+                <div class="swiper-button-next "></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            
+        </div>
+
+        <!-- Explore Our Servies -->
+
+        <div class="container mt-5">
+            <div class="d-flex justify-content-center pt-4">
+                <h3>Explore Our Services</h3>
+            </div>
+
+
+            <div class="row row-cols-1 mt-3 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100 card-learn">
+                        <div class="img-hover-zoom1">
+                            <img src="images/learn-1.png" class="card-img-top" alt="Image 1" height="350px">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Group Lesson</h5>
+                            <a class="a-learn" href="">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 card-learn">
+                        <div class="img-hover-zoom1">
+                            <img src="images/learn-3.png" class="card-img-top" alt="Image 1" height="350px">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Court Rent</h5>
+                            <a class="a-learn" href="">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 card-learn">
+                        <div class="img-hover-zoom1">
+                            <img src="images/learn-4.png" class="card-img-top" alt="Image 1" height="350px">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Training Program</h5>
+                            <a class="a-learn" href="">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 card-learn">
+                        <div class="img-hover-zoom1">
+                            <img src="images/learn-5.png" class="card-img-top" alt="Image 1" height="350px">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Private Lessons</h5>
+                            <a class="a-learn" href="">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Coaches -->
+        <div class="container mb-5 ">
+            <div class="d-flex justify-content-center pt-4">
+                <h3>Featured Coaches</h3>
+            </div>
+
+            <div class="conatiner swiper mySwiper mt-3">
+                <div class="swiper-wrapper" id="swip">
+                    <div class="swiper-slide">
+                        <div class="card h-100 card-coach">
+                            <div class="img-hover-zoom2">
+                                <img id="coach-1" src="images/coach-1.png" class="img-fluid" style="height: 320px;"
+                                    alt="This zooms-in really well and smooth">
+                            </div>
+                            <div class="card-body text-center">
+                                <p class="card-title">4 lesson</p>
+                                <h2 id="name-1" class="card-text">Kevin Anderson </h2>
+                                <button onclick="storecoach('coach-1','name-1')" class="animated-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                        </path>
+                                    </svg>
+                                    <span class="text">N E X T</span>
+                                    <span class="circle"></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card h-100 card-coach">
+                            <div class="img-hover-zoom2">
+                                <img id='coach-2' src="images/coach-2.png" class="img-fluid" style="height: 320px;"
+                                    alt="This zooms-in really well and smooth">
+                            </div>
+                            <div class="card-body text-center">
+                                <p class="card-title">3 lesson</p>
+                                <h2 class="card-text" id="name-2">Harry Richardson </h2>
+                                <button class="animated-button" onclick="storecoach('coach-2','name-2')">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                        </path>
+                                    </svg>
+                                    <span class="text">N E X T</span>
+                                    <span class="circle"></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card h-100 card-coach">
+                            <div class="img-hover-zoom2">
+                                <img id="coach-3" src="images/coach-3.png" class="img-fluid" style="height: 320px;"
+                                    alt="This zooms-in really well and smooth">
+                            </div>
+                            <div class="card-body text-center">
+                                <p class="card-title">3 lesson</p>
+                                <h2 id="name-3" class="card-text">Angela Roudrigez </h2>
+                                <button class="animated-button" onclick="storecoach('coach-3','name-3')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                        </path>
+                                    </svg>
+                                    <span class="text">N E X T</span>
+                                    <span class="circle"></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card h-100 card-coach">
+                            <div class="img-hover-zoom2">
+                                <img id="coach-4" src="images/coach-4.png" class="img-fluid" style="height: 320px;"
+                                    alt="This zooms-in really well and smooth">
+                            </div>
+                            <div class="card-body text-center">
+                                <p class="card-title">3 lesson</p>
+                                <h2 id="name-4" class="card-text">Evon Raddick </h2>
+                                <button class="animated-button" onclick="storecoach('coach-4','name-4')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                        </path>
+                                    </svg>
+                                    <span class="text">N E X T</span>
+                                    <span class="circle"></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                                        <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+        </div>
+        <div class="container-fluid request-container ">
+        <div class="container  ">
+            <div class="container row pt-5 ps-5 pb-5 ">
+                <div class=" col-md-4">
+                    <div class="card card-request">
+                        <div class="card-body text-light ">
+                            <h1>Request A Call Back</h1>
+                            <hr style="background-color: yellow;opacity:1px;">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum non ad nisi voluptatum
+                                dolores mollitia, est iure earum?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 pt-4">
+                    <div>
+                        <h6 class="text-light">I would like to discuss :</h6>
+                    </div>
+                    <div class="row mb-4 ">
+                        <div class="col-md-6 mb-3 mb-md-0 ">
+                            <select class="form-select">
+                                <option selected>Cricket Dreams</option>
+                                <option value="1 ">Truf</option>
+                                <option value="2 ">Coach</option>
+                                <option value="3 ">Servies</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 ">
+                            <input type="text " class="form-control" placeholder="First Name ">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3 mb-md-0 ">
+                            <input type="text " class="form-control" placeholder="Phone Number">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email " class="form-control" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6 mb-3 mb-md-0 ">
+                            <input type="text " class="form-control" placeholder="Enter any Question ">
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-dark text-light w-50 btn1">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- faq -->
+        <div class="container-fluid "  id="faq">
+            <div class="container " >
+                <div class="d-flex justify-content-center pt-4">
+                    <h3>Extra Benefits, Unmatched Service Excellence</h3>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-lg-6 pt-5 " style="padding-top: 100px;min-height: 430px;">
+                        <h5>Frequently Asked Questions</h5>
+                        <p>Here are some frequently asked questions about Cricket at DreamCricket:</p>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        What is the duration of truf timing?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad nulla totam
+                                            assumenda soluta quidem debitis quo dicta fugit. Repudiandae, dignissimos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Can i rent bat/ball and dreamscricket
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad nulla totam
+                                            assumenda soluta quidem debitis quo dicta fugit. Repudiandae, dignissimos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Are there any coaching servies in at dreamscricket
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad nulla totam
+                                            assumenda soluta quidem debitis quo dicta fugit. Repudiandae, dignissimos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4 mb-lg-0 ">
+                        <img src="images/faq.png" class="img-fluid" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- footer -->
+        <div class="container-fluid" style="background-color: #596167;" id="foot">
+            <div>
+                <div class="row pt-4 justify-content-center">
+                    <div class="col-md-3 " data-aos="zoom-in ">
+                        <div class="card card-map ">
+                            <div class="card-body ">
+                                <h1 class="card-title ">DreamCricket</h1>
+                                <p class="card-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem
+                                    ipsum
+                                    dolor sit amet consectetur adipisicing elit. Rerum, aut porro! Et, quas eveniet?
+                                    Cumque
+                                    magni ex odio sed at? </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" data-aos="zoom-in ">
+                        <div class="card card-map ">
+                            <div class="card-body ">
+                                <h5 class="card-title ">Recent News</h5>
+                                <hr style="border-top: 2px solid white; border-radius: 5px; width: 200px; ">
+                                <h6 class="card-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h6>
+                                <span><lord-icon src="https://cdn.lordicon.com/gjlgchju.json " trigger="in "
+                                        delay="1500 " state="in-alarm " colors="primary:#e8b730 "
+                                        style="width:20px;height:20px;padding-top:4px ">
+                                    </lord-icon></span>
+                                <p class="card-text pb-1 d-inline-flex ">January 26,2023
+                                </p>
+                                <h6 class="card-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h6>
+                                <div class="d-inline ">
+                                    <span><lord-icon src="https://cdn.lordicon.com/gjlgchju.json " trigger="in "
+                                            delay="1500 " state="in-alarm " colors="primary:#e8b730 "
+                                            style="width:20px;height:20px;padding-top:4px ">
+                                        </lord-icon></span>
+                                    <p class="card-text pb-1 d-inline-flex ">January 26,2023 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" data-aos="zoom-in ">
+                        <div class="card card-map ">
+                            <div class="card-body ">
+                                <h5 class="card-title ">Extra Links</h5>
+                                <hr style="border-top: 2px solid white; border-radius: 5px; width: 200px; ">
+                                <div class="row ">
+                                    <div class="col ">
+                                        <li>About</li>
+                                        <li>Contact</li>
+                                        <li>Services</li>
+                                        <li>Career</li>
+                                        <li>Shop</li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" data-aos="zoom-in ">
+                        <div class="card card-map ">
+                            <div class="card-body ">
+                                <h5 class="card-title ">Subscribe</h5>
+
+                                <div class="input-wrapper mt-2 mb-3">
+                                    <input type="text" class="form-control" placeholder="Enter Your Email...">
+                                    <button>
+                                        <lord-icon src="https://cdn.lordicon.com/ayhtotha.json " trigger="in "
+                                            delay="1500 " state="in-chat " colors="primary:#e8b730 "
+                                            style="width:20px;height:35px; ">
+                                        </lord-icon>
+                                    </button>
+                                </div>
+                                <p>Get latest update and offer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container-fluid  text-center text-light py-3">
+                <p class="mb-0">&copy; 2024 DreamCricket Company. All rights reserved.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js "></script>
+</body>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        freeMode: true,
+        autoplay: {
+            delay: 3000,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            '1024': {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+            '800': {
+                slidesPerView: 2,
+                spaceBetween: 50,
+            },
+            '480': {
+                slidesPerView: 1,
+                spaceBetween: 50,
+            },
+            '300': {
+                slidesPerView: 1,
+                spaceBetween: 50,
+            },
+        },
+
+        mousewheel: true,
+        keyboard: true,
+    },);
+
+
+    function storeImage(imageId, text) {
+        var img = document.getElementById(imageId);
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        var heading = document.getElementById(text).textContent;
+
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        ctx.drawImage(img, 0, 0);
+        var dataURL = canvas.toDataURL('image.jpg');
+        localStorage.setItem('storedImage', dataURL);
+        localStorage.setItem('storedHeading', heading);
+        window.location.href = 'aboutus.html';
+    }
+    function storecoach(imageId, text) {
+        var img = document.getElementById(imageId);
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        var heading = document.getElementById(text).textContent;
+
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        ctx.drawImage(img, 0, 0);
+        var dataURL = canvas.toDataURL('image.jpg');
+        localStorage.setItem('storedImage1', dataURL);
+        localStorage.setItem('storedHeading1', heading);
+        window.location.href = 'coach.html';
+    }
+</script>
+
+</html>

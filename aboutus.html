@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Document</title>
+
+    <style>
+        .navbar {
+            background-color: rgb(152, 159, 165);
+        }
+
+      
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .nav-item a {
+            color: black;
+            font-family: fantasy;
+            font-size: larger;
+        }
+
+        .nav-item a:hover {
+            color: white;
+        }
+
+        .navbar-brand a {
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .input-wrapper input {
+            padding-right: 40px;
+        }
+
+        .input-wrapper button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .modal-content {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .modal-body {
+            padding: 0;
+        }
+
+        .btn-close {
+            position: absolute;
+            right: 0;
+            padding: 1em;
+        }
+
+        h1 {
+            font-size: 2.3em;
+            font-weight: bold;
+        }
+
+        .myform {
+            padding: 2em;
+            max-width: 100%;
+            color: #fff;
+            box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+        }
+
+        @media (max-width: 576px) {
+            .myform {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        .input-log:focus {
+            box-shadow: inset 0 -1px 0 #7e7e7e;
+        }
+
+        .input-log {
+            background-color: inherit;
+            color: #fff;
+            padding-left: 0;
+            border: 0;
+            border-radius: 0;
+            border-bottom: 1px solid #fff;
+        }
+
+        .myform .btn {
+            width: 100%;
+            font-weight: 800;
+            background-color: #fff;
+            border-radius: 0;
+            padding: 0.5em 0;
+        }
+
+        .myform .btn:hover {
+            background-color: inherit;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .p1 {
+            text-align: center;
+            padding-top: 2em;
+            color: grey;
+        }
+
+        .p1 a {
+            color: #e1e1e1;
+            text-decoration: none;
+        }
+
+        .p1 a:hover {
+            color: #fff;
+        }
+
+        #retrievedImage {
+            width:100%;
+            height: 100%;
+            border-radius: 100%;
+        }
+
+        .star {
+            width: 20px;
+            height: 45px;
+            padding-top: 30px;
+
+
+        }
+       
+        .book {
+            background-color: rgb(246, 246, 246);
+            ;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+        .card-map {
+            border: none;
+            background-color: rgb(152, 159, 165);
+            ;
+            color: #fff;
+        }
+        .box-1{
+            background-image: url('images/image.png');
+            background-position: center;
+            background-repeat: no-repeat;
+           background-size: cover   ;
+            color: white;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+#exampleInputPassword1{
+    background-color: white;
+}
+    </style>
+
+</head>
+
+<body>
+    <div>
+
+        <div class="col-lg-12 col-md-12 top">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+
+                    <img src="images/logo.png" alt="Logo" width="80px" height="50px"
+                        class="d-inline-block pe-2 align-text-top">
+                    <a style="font-family: fantasy; font-size:33px;" class="nav-link"> DreamsCricket </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto me-3 gap-1 mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/coach.html">Coaches</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/aboutus.html">Truf</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Faq</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contacts Us</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex">
+                            <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                                data-bs-target="#ModalForm">
+                                Login/Ragister
+                            </button>
+                            <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <button type="button" class="btn-close btn-close-white"
+                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <div class="myform bg-dark">
+                                                <h1 class="text-center">Login Form</h1>
+                                                <form>
+                                                    <div class="mb-3 mt-4">
+                                                        <label for="exampleInputEmail1" class="form-label">Email
+                                                            address</label>
+                                                        <input type="email" class="form-control input-log"
+                                                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="exampleInputPassword1"
+                                                            class="form-label">Password</label>
+                                                        <input type="password" class="form-control input-log"
+                                                            id="exampleInputPassword1">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-light mt-3">LOGIN</button>
+                                                    <p class="p1">Not a member? <a href="#">Signup now</a></p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fluid box-1 justify-content-between" style="padding: 60px 60px;">
+            <div class="row">
+                
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-end">
+                        <div class="col">
+                            <h1 id="retrievedHeading"></h1>
+                        </div>
+                        <div class="col">
+                            <img src="images/star.png" class="img-fluid star" alt="">
+                            <img src="images/star.png" class="img-fluid star" alt="">
+                            <img src="images/star.png" class="img-fluid star" alt="">
+                            <img src="images/star.png" class="img-fluid star" alt="">
+                            <img src="images/star-1.png" class="img-fluid star" alt="">
+
+                        </div>
+                    </div>
+
+                    <p class="text-start me-5">Lorem ullam ut autem Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                        sit amet. tempora sint. Rem possimus recusandae incidunt quasi sunt saepe voluptate officia
+                        iste, tempora hic. Incidunt, explicabo, quaerat quis fuga sequi, beatae ex assumenda et
+                        natus quam tempora aperiam! Quis reprehenderit, consectetur autem expedita vitae itaque
+                        laboriosam cupiditate necessitatibus in. Iusto dolore tempora velit, cumque ducimus
+                        repellendus vero suscipit illo hic, at incidunt nesciunt.</p>
+                    <button type="button" class="btn btn-success w-50 book align-item-center" data-bs-toggle="modal"
+                        data-bs-target="#ModalForm1">
+                        Booking
+                    </button>
+                    <div class="row pt-5">
+                        <div class="col" >
+                            <h1 id="counter"></h1>
+                            <h4>Review</h4>
+                        </div>
+                        <div class="col">
+                            <h1 id="counter1"></h1>
+                            <h4>Awards</h4>
+                        </div>
+                        <div class="col">
+                            <h1 id="counter2"></h1>
+                            <h4>Trophy</h4>
+                        </div>
+                        <div class="col">
+                            <h1 id="counter3"></h1>
+                            <h4>Coache</h4>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="ModalForm1" tabindex="-1" aria-labelledby="ModalFormLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                    <div class="myform bg-dark">
+                                        <h1 class="text-center">Booking</h1>
+                                        <form>
+                                            <div class="mb-1 mt-4">
+                                                <label for="exampleInputEmail1" class="form-label">Booking
+                                                    Name</label>
+                                                <input type="name" class="form-control input-log w-100"
+                                                    id="exampleInputPassword1" aria-describedby="emailHelp">
+
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="exampleInputPassword1"
+                                                    class="form-label">Contact-No</label>
+                                                <input type="number" class="form-control input-log"
+                                                    id="exampleInputPassword1">
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="exampleInputPassword1" class="form-label">Date</label>
+                                                <input type="date" class="form-control input-log"
+                                                    id="exampleInputPassword1">
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="exampleInputPassword1" class="form-label">Time</label>
+                                                <input type="time" class="form-control input-log"
+                                                    id="exampleInputPassword1">
+                                            </div>
+
+
+
+
+                                            <button type="submit" class="btn btn-light mt-3">Book Now</button>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ">  
+                        <div class="col d-flex justify-content-end" >
+                            <img id="retrievedImage" class="img-fluid " alt="Stored Image">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    </div>
+    
+    <!-- footer -->
+    <div class="container-fluid" style="background-color: #989FA5;">
+        <div>
+            <div class="row pt-4">
+                <div class="col-md-3 " data-aos="zoom-in ">
+                    <div class="card card-map ">
+                        <div class="card-body ">
+                            <h1 class="card-title ">DreamCricket</h1>
+                            <p class="card-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem
+                                ipsum
+                                dolor sit amet consectetur adipisicing elit. Rerum, aut porro! Et, quas eveniet?
+                                Cumque
+                                magni ex odio sed at? </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in ">
+                    <div class="card card-map ">
+                        <div class="card-body ">
+                            <h5 class="card-title ">Recent News</h5>
+                            <hr style="border-top: 2px solid white; border-radius: 5px; width: 200px; ">
+                            <h6 class="card-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h6>
+                            <span><lord-icon src="https://cdn.lordicon.com/gjlgchju.json " trigger="in " delay="1500 "
+                                    state="in-alarm " colors="primary:#e8b730 "
+                                    style="width:20px;height:20px;padding-top:4px ">
+                                </lord-icon></span>
+                            <p class="card-text pb-1 d-inline-flex ">January 26,2023
+                            </p>
+                            <h6 class="card-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h6>
+                            <div class="d-inline ">
+                                <span><lord-icon src="https://cdn.lordicon.com/gjlgchju.json " trigger="in "
+                                        delay="1500 " state="in-alarm " colors="primary:#e8b730 "
+                                        style="width:20px;height:20px;padding-top:4px ">
+                                    </lord-icon></span>
+                                <p class="card-text pb-1 d-inline-flex ">January 26,2023 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in ">
+                    <div class="card card-map ">
+                        <div class="card-body ">
+                            <h5 class="card-title ">Extra Links</h5>
+                            <hr style="border-top: 2px solid white; border-radius: 5px; width: 200px; ">
+                            <div class="row ">
+                                <div class="col ">
+                                    <li>About</li>
+                                    <li>Contact</li>
+                                    <li>Services</li>
+                                    <li>Career</li>
+                                    <li>Shop</li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in ">
+                    <div class="card card-map ">
+                        <div class="card-body ">
+                            <h5 class="card-title ">Subscribe</h5>
+
+                            <div class="input-wrapper mt-2 mb-3">
+                                <input type="text" class="form-control" placeholder="Enter Your Email...">
+                                <button>
+                                    <lord-icon src="https://cdn.lordicon.com/ayhtotha.json " trigger="in " delay="1500 "
+                                        state="in-chat " colors="primary:#e8b730 " style="width:20px;height:35px; ">
+                                    </lord-icon>
+                                </button>
+                            </div>
+                            <p>Get latest update and offer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container-fluid  text-center text-light py-3">
+            <p class="mb-0">&copy; 2024 DreamCricket Company. All rights reserved.</p>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js "></script>
+
+    <script>
+        window.onload = function () {
+            var storedImage = localStorage.getItem('storedImage');
+            var storedHeading = localStorage.getItem('storedHeading');
+            if (storedImage) {
+                document.getElementById('retrievedImage').src = storedImage;
+                document.getElementById('retrievedHeading').textContent = storedHeading;
+
+            } else {
+                alert('No image found in local storage.');
+            }
+        };
+
+        let counts = setInterval(updated, 50);
+        let upto = 0;
+    
+        function updated() {
+            let count = document.getElementById("counter");
+            count.innerHTML = ++upto;
+            if (upto === 167) {
+                clearInterval(counts)
+                clearInterval(counts1)
+                clearInterval(counts2)
+                clearInterval(counts3)
+            }
+        }
+        let counts1 = setInterval(updated1, 200);
+        let upto1 = 0;
+    
+        function updated1() {
+            let count1 = document.getElementById("counter1");
+            count1.innerHTML = ++upto1;
+            if (upto1 === 100) {
+                clearInterval(counts1)
+            }
+        }
+        let counts2 = setInterval(updated2, 403);
+        let upto2 = 0;
+        function updated2() {
+            let count2 = document.getElementById("counter2");
+            count2.innerHTML = ++upto2;
+            if (upto2 === 100) {
+                clearInterval(counts2)
+            }
+        }
+        let counts3 = setInterval(updated3, 503);
+        let upto3 = 0;
+        function updated3() {
+            let count3 = document.getElementById("counter3");
+            count3.innerHTML = ++upto3;
+            if (upto3 === 100) {
+                clearInterval(counts3)
+            }
+        }
+    </script>
+</body>
+
+</html>
